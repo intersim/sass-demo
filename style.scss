@@ -1,0 +1,40 @@
+/* modules: pulls in normalize.scss */
+@import 'node_modules/normalize.css/normalize';
+
+/* nesting */
+article {
+  border: 1px solid red;
+  li {
+    background: gray;
+  }
+}
+
+/* variables */
+$deep-red: #990000;
+a {
+  color: $deep-red;
+}
+
+.warning {
+  border: 1px solid $deep-red;
+}
+
+/* loops */
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-size: $i * 10px;
+  }
+}
+
+/* functions aka "mixins" */
+@mixin border-radius ($r) {
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  border-radius: $r;
+}
+
+.thing {
+  @include border-radius(10px);
+  background-color: gray;
+}
+
