@@ -1,22 +1,24 @@
 /* modules: pulls in normalize.scss */
-@import 'node_modules/normalize.css/normalize';
+// @import 'node_modules/normalize.css/normalize';
+
+* {
+  margin: 10px;
+}
 
 /* nesting */
 article {
-  border: 1px solid red;
+  border: 1px solid green;
   li {
-    background: gray;
+    background: lightgray;
   }
 }
 
 /* variables */
 $deep-red: #990000;
-a {
-  color: $deep-red;
-}
 
 .warning {
-  border: 1px solid $deep-red;
+  color: $deep-red;
+  font-weight: bold;
 }
 
 /* loops */
@@ -35,6 +37,30 @@ a {
 
 .thing {
   @include border-radius(10px);
-  background-color: gray;
+  padding: 10px;
+}
+
+.pink-thing {
+  @extend .thing;
+  background-color: deeppink;
+}
+
+.block {
+  border: 2px solid orange;
+  width: 50px;
+  height: 50px;
+}
+
+.inline {
+  border: 2px solid deeppink;
+  width: 50px;
+  height: 50px;
+}
+
+.inline-block {
+  display: inline-block;
+  border: 2px solid royalblue;
+  width: 50px;
+  height: 50px;
 }
 
